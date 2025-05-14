@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud LEGO Builder</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="sidebar-tabs">
+        <button class="tab active" data-tab="compute">Compute</button>
+        <button class="tab" data-tab="network">Network</button>
+        <button class="tab" data-tab="security">Security</button>
+        <button class="tab" data-tab="storage">Storage</button>
+        <button class="tab" data-tab="others">Others</button>
+      </div>
+      <div class="tab-content" id="tab-compute">
+        <div class="block-card" draggable="true" data-type="VM">
+          <span class="icon">🖥️</span>
+          <span class="label">VM</span>
+        </div>
+        <div class="block-card" draggable="true" data-type="LB">
+          <span class="icon">🟦</span>
+          <span class="label">LB</span>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-security" style="display:none;">
+        <div class="block-card" draggable="true" data-type="SG">
+          <span class="icon">🟧</span>
+          <span class="label">SG</span>
+        </div>
+      </div>
+      <!-- 나머지 탭은 비워둠 -->
+    </div>
+    <div id="canvasWrapper">
+      <canvas id="three-canvas"></canvas>
+    </div>
+    <div id="propertyPanel">
+      <div id="propertyContent">블록을 선택하면 속성이 표시됩니다.</div>
+      <button id="exportBtn">Export State</button>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
